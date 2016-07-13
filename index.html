@@ -10,238 +10,61 @@
    <link rel="stylesheet" href="fonts/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-  <body>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script type="text/javascript">
+          var markers = [];
+      function initialize() {
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Hackzilla</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Valley Fault System</a></li>
-            <li><a href="#">Evacuation Areas</a></li>
-            <li><a href="#">Earthquakes</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-4 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <h2>Valley Fault System</h2>
-            <h3>Bulacan</h3>
-            <li><a href="">Doña Remedios Trinidad</a></li>
-            <li><a href="">Norzagaray</a></li>
-            <li><a href="">San Jose del Monte City</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <h3>Rizal</h3>
-            <li><a href="">Rodriguez</a></li>
-            <li><a href="">San Mateo</a></li>
-          </ul>
-
-        <ul class="nav nav-sidebar">
-          <h3>Metro Manila</h3>
-          <li><a href="">Quezon City</a></li>
-          <li><a href="">Marikina City</a></li>
-          <li><a href="">Pasig City</a></li>
-          <li><a href="">Makati City</a></li>
-          <li><a href="">Taguig City</a></li>
-          <li><a href="">Muntinlupa City</a></li>
-        </ul>
-        <ul class="nav nav-sidebar">
-          <h3>Cavite</h3>
-          <li><a href="">Gen. Mariano Alvarez</a></li>
-          <li><a href="">Carmona</a></li>
-          <li><a href="">Silang</a></li>
-        </ul>
-        <ul class="nav nav-sidebar">
-          <h3>Laguna</h3>
-          <li><a href="">San Pedro City</a></li>
-          <li><a href="">Biñan City</a></li>
-          <li><a href="">Santa Rosa City</a></li>
-          <li><a href="">Cabuyao City</a></li>
-          <li><a href="">Calamba City</a></li>
-        </ul>
-        </div>
-      </div>
-        <div class="col-sm-8 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <div class="row" style="margin-right: -30px;margin-left: -25px;">
-            <div class="col-xs-12" id="map">
-
-            </div>
-
-          </div>
-          <div class="container ">
-            <div class="row">
-                <div class="col-md-4 tweet">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading" id="accordion">
-                            <i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter Feed
-                            <div class="btn-group pull-right">
-                                <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                    <span class="glyphicon glyphicon-chevron-down"></span>
-                                </a>
-                            </div>
-                        </div>
-                    <div class="panel-collapse collapse " id="collapseOne">
-                        <div class="panel-body">
-                          <a class="twitter-timeline"  href="https://twitter.com/search?q=Earthquake%20%23earthquake" data-widget-id="752168888759046144"   data-chrome="nofooter noborders"  width="100%" height="300"><p>Tweets </p></a>
-                          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-                        </div>
-                        <div class="panel-footer">
-
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+              var mapOptions = {
+                  zoom: 10,
+                  center: new google.maps.LatLng(40.714364, -74.005972),
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+              }
+              var map = new google.maps.Map(document.getElementById("googlemap"), mapOptions);
 
 
-          <h2 class="sub-header">Earthquakes</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
+              var locations = [
+                  ['New York', 40.714364, -74.005972, 'http://www.google.com/intl/en_us/mapfiles/ms/micons/green-dot.png'],
+                  ['yeyy', 40.714369, -74.005972, 'http://www.google.com/intl/en_us/mapfiles/ms/micons/green-dot.png']
+              ];
 
+
+              var marker, i;
+              var infowindow = new google.maps.InfoWindow();
+
+
+              google.maps.event.addListener(map, 'click', function() {
+                  infowindow.close();
+              });
+
+
+              for (i = 0; i < locations.length; i++) {
+                  marker = new google.maps.Marker({
+                      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                      map: map
+
+                  });
+
+                  google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                      return function() {
+                          infowindow.setContent(locations[i][0]);
+                          infowindow.open(map, marker);
+                      }
+                  })(marker, i));
+
+                  markers.push(marker);
+              }
+
+          }
+          google.maps.event.addDomListener(window, 'load', initialize);
+
+          function myClick(id){
+              google.maps.event.trigger(markers[id], 'click');
+          }
+  </script>
+  <div id="googlemap" style="width: 100%; height: 500px;"></div>
+  <a href="javascript:map.panTo(new google.maps.LatLng(14.8302664,121.1126421));map.setZoom(9);" onclick="myClick(0);">Open Info Window</a>
+  <a href="#" onclick="myClick(1);">Open Info Window</a>
 
 
 </body>

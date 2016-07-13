@@ -1,4 +1,6 @@
-var map = new google.maps.Map(document.getElementById('map'), {
+  var markers = [];
+
+  var map = new google.maps.Map(document.getElementById('map'), {
   zoom: 9,
   center: new google.maps.LatLng(14.8302664,121.1126421),
   mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -55,8 +57,8 @@ userCoordinate.setMap(map);
 
 var population = [22663,111348,574089,369222,252527,2936116,450741,755300,582602,804915,504509,155143,97557,248085,325809,333028,353767,308745,454486];
   var infowindow = new google.maps.InfoWindow();
-
   var marker, i;
+
 
   for (i = 0; i < locations.length; i++) {
     var circle = new google.maps.Circle({
@@ -79,4 +81,25 @@ circle.bindTo('center', marker, 'position');
         infowindow.open(map, marker);
       }
     })(marker, i));
+      markers.push(marker);
   }
+//opening sidebar by markers
+function myClick(id){
+    google.maps.event.trigger(markers[id], 'click');
+
+}
+//valley fault system
+    var infoWindows = [];
+    infoWindows.push(infowindow);
+    function closeAllInfoWindows() {
+  for (var i=0;i<infoWindows.length;i++) {
+     infoWindows[i].close();
+  }
+}
+
+//closing markers by clicking the map
+google.maps.event.addListener(map, "click", function(event) {
+    for (var i = 0; i < infoWindows.length; i++ ) {  //I assume you have your infoboxes in some array
+         infoWindows[i].close();
+    }
+});

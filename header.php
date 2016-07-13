@@ -36,40 +36,40 @@
       <div class="row">
         <div class="col-sm-4 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <h2>Valley Fault System</h2>
+            <h2><a href="javascript:map.panTo(new google.maps.LatLng(14.8302664,121.1126421));map.setZoom(9);" onclick="closeAllInfoWindows();" >Valley Fault System</a></h2>
             <h3>Bulacan</h3>
-            <li><a href="">Doña Remedios Trinidad</a></li>
-            <li><a href="">Norzagaray</a></li>
-            <li><a href="">San Jose del Monte City</a></li>
+            <li><a href="javascript:map.panTo(new google.maps.LatLng(15.0929081,121.0613609));map.setZoom(15);" onclick="myClick(0);">Doña Remedios Trinidad</a></li>
+            <li><a href="javascript:map.panTo(new google.maps.LatLng(14.8740942,121.1427638));map.setZoom(15);" onclick="myClick(1);">Norzagaray</a></li>
+            <li><a href="javascript:map.panTo(new google.maps.LatLng(14.8236989,121.0948389));map.setZoom(14);" onclick="myClick(2);">San Jose del Monte City</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <h3>Rizal</h3>
-            <li><a href="">Rodriguez</a></li>
-            <li><a href="">San Mateo</a></li>
+            <li><a href="javascript:map.panTo(new google.maps.LatLng(14.760122,121.2003971));map.setZoom(14);" onclick="myClick(3);">Rodriguez</a></li>
+            <li><a href="javascript:map.panTo(new google.maps.LatLng(14.6774533,121.1591888));map.setZoom(15);" onclick="myClick(4);">San Mateo</a></li>
           </ul>
 
         <ul class="nav nav-sidebar">
           <h3>Metro Manila</h3>
-          <li><a href="">Quezon City</a></li>
-          <li><a href="">Marikina City</a></li>
-          <li><a href="">Pasig City</a></li>
-          <li><a href="">Makati City</a></li>
-          <li><a href="">Taguig City</a></li>
-          <li><a href="">Muntinlupa City</a></li>
+          <li><a href="javascript:map.panTo(new google.maps.LatLng(14.6750431,121.0402429));map.setZoom(13);" onclick="myClick(5);">Quezon City</a></li>
+          <li><a href="javascript:map.panTo(new google.maps.LatLng(14.6504042,121.1019699));map.setZoom(14);" onclick="myClick(6);">Marikina City</a></li>
+          <li><a href="javascript:map.panTo(new google.maps.LatLng(14.5772737,121.0857342));map.setZoom(14);" onclick="myClick(7);">Pasig City</a></li>
+          <li><a href="javascript:map.panTo(new google.maps.LatLng(14.5546368,121.0241139));map.setZoom(14);" onclick="myClick(8);">Makati City</a></li>
+          <li><a href="javascript:map.panTo(new google.maps.LatLng(14.5170481,121.047546));map.setZoom(14);" onclick="myClick(9);">Taguig City</a></li>
+          <li><a href="javascript:map.panTo(new google.maps.LatLng(14.4067315,121.0365698));map.setZoom(14);" onclick="myClick(10);">Muntinlupa City</a></li>
         </ul>
         <ul class="nav nav-sidebar">
           <h3>Cavite</h3>
-          <li><a href="">Gen. Mariano Alvarez</a></li>
-          <li><a href="">Carmona</a></li>
-          <li><a href="">Silang</a></li>
+          <li><a href="javascript:map.panTo(new google.maps.LatLng(14.3072134,121.0116093));map.setZoom(15);" onclick="myClick(11);">Gen. Mariano Alvarez</a></li>
+          <li><a href="javascript:map.panTo(new google.maps.LatLng(14.2971985,121.0387576));map.setZoom(15);" onclick="myClick(12);">Carmona</a></li>
+          <li><a href="javascript:map.panTo(new google.maps.LatLng(14.2191259,120.9692234));map.setZoom(15);" onclick="myClick(13);">Silang</a></li>
         </ul>
         <ul class="nav nav-sidebar">
           <h3>Laguna</h3>
-          <li><a href="">San Pedro City</a></li>
-          <li><a href="">Biñan City</a></li>
-          <li><a href="">Santa Rosa City</a></li>
-          <li><a href="">Cabuyao City</a></li>
-          <li><a href="">Calamba City</a></li>
+          <li><a href="javascript:map.panTo(new google.maps.LatLng(14.3488148,121.0342489));map.setZoom(15);" onclick="myClick(14);">San Pedro City</a></li>
+          <li><a href="javascript:map.panTo(new google.maps.LatLng(14.3034756,121.0759443));map.setZoom(15);" onclick="myClick(15);">Biñan City</a></li>
+          <li><a href="javascript:map.panTo(new google.maps.LatLng(14.283444,121.084726));map.setZoom(15);" onclick="myClick(16);">Santa Rosa City</a></li>
+          <li><a href="javascript:map.panTo(new google.maps.LatLng(14.2471016,121.1360729));map.setZoom(15);"onclick="myClick(17);">Cabuyao City</a></li>
+          <li><a href="javascript:map.panTo(new google.maps.LatLng(14.1870326,121.1235034));map.setZoom(14);"onclick="myClick(18);">Calamba City</a></li>
         </ul>
         </div>
       </div>
