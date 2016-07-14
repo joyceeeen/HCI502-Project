@@ -36,7 +36,7 @@
       <div class="row">
         <div class="col-sm-4 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <h2><a href="javascript:map.panTo(new google.maps.LatLng(14.8302664,121.1126421));map.setZoom(9);" onclick="closeAllInfoWindows();" >Valley Fault System</a></h2>
+            <h3 class="valley"><a href="javascript:map.panTo(new google.maps.LatLng(14.8302664,121.1126421));map.setZoom(9);" onclick="closeAllInfoWindows();" class="all-valley">Valley Fault System</a></h3>
             <h3>Bulacan</h3>
             <li><a href="javascript:map.panTo(new google.maps.LatLng(15.0929081,121.0613609));map.setZoom(15);" onclick="myClick(0);">Doña Remedios Trinidad</a></li>
             <li><a href="javascript:map.panTo(new google.maps.LatLng(14.8740942,121.1427638));map.setZoom(15);" onclick="myClick(1);">Norzagaray</a></li>
