@@ -4,6 +4,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <title>Valley Fault System</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-select.min.css" rel="stylesheet">
    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
    <link rel="stylesheet" href="fonts/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
 </head>
@@ -19,13 +20,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Hackzilla</a>
+          <a class="navbar-brand" href="maps.php">Hackzilla</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Valley Fault System</a></li>
-            <li><a href="#">Evacuation Areas</a></li>
-            <li><a href="#">Earthquakes</a></li>
+            <li><a href="javascript:map.panTo(new google.maps.LatLng(14.8302664,121.1126421));map.setZoom(9);" onclick="showEartquakes();backtotop();">Valley Fault System</a></li>
+            <li><a href="javascript:map.panTo(new google.maps.LatLng(14.8302664,121.1126421));map.setZoom(9);"  onclick="showEvacuation();backtotop();">Evacuation Areas</a></li>
+            <li><a href="#" onclick="earthquake();">Earthquakes</a></li>
             <li><a href="#">Help</a></li>
           </ul>
         </div>
@@ -36,7 +37,7 @@
       <div class="row">
         <div class="col-sm-4 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <h3 class="valley"><a href="javascript:map.panTo(new google.maps.LatLng(14.8302664,121.1126421));map.setZoom(9);" onclick="closeAllInfoWindows();" class="all-valley">Valley Fault System</a></h3>
+            <h2 class="valley"><a href="javascript:map.panTo(new google.maps.LatLng(14.8302664,121.1126421));map.setZoom(9);" onclick="closeAllInfoWindows();" class="all-valley">Valley Fault System</a></h2>
             <h3>Bulacan</h3>
             <li><a href="javascript:map.panTo(new google.maps.LatLng(15.0929081,121.0613609));map.setZoom(15);" onclick="myClick(0);">Doña Remedios Trinidad</a></li>
             <li><a href="javascript:map.panTo(new google.maps.LatLng(14.8740942,121.1427638));map.setZoom(15);" onclick="myClick(1);">Norzagaray</a></li>
@@ -75,7 +76,8 @@
       </div>
         <div class="col-sm-8 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <div class="row" style="margin-right: -30px;margin-left: -25px;">
-            <div class="col-xs-12" id="map">
+
+            <div class="col-xs-12 map" id="map">
 
             </div>
 
@@ -106,5 +108,6 @@
                 </div>
             </div>
         </div>
+
 
  <h2 class="sub-header">Earthquakes</h2>

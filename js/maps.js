@@ -57,7 +57,7 @@ userCoordinate.setMap(map);
 
 var population = [22663,111348,574089,369222,252527,2936116,450741,755300,582602,804915,504509,155143,97557,248085,325809,333028,353767,308745,454486];
   var infowindow = new google.maps.InfoWindow();
-  var marker, i;
+  var marker, i,earthquake;
 
 
   for (i = 0; i < locations.length; i++) {
@@ -75,6 +75,7 @@ fillOpacity: 0.35
       map: map
     });
 circle.bindTo('center', marker, 'position');
+circle.bindTo('map', marker);
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
       return function() {
         infowindow.setContent(locations[i][0]);
@@ -86,6 +87,8 @@ circle.bindTo('center', marker, 'position');
 //opening sidebar by markers
 function myClick(id){
     google.maps.event.trigger(markers[id], 'click');
+    setMapOnAll(map);
+    userCoordinate.setMap(map);
 
 }
 //valley fault system
@@ -103,3 +106,18 @@ google.maps.event.addListener(map, "click", function(event) {
          infoWindows[i].close();
     }
 });
+//set earthquakes minus the evacuation
+function setMapOnAll(map) {
+       for (var i = 0; i < markers.length-5; i++) {
+         markers[i].setMap(map);
+       }
+     }
+function showEvacuation() {
+      setMapOnAll(null);
+      userCoordinate.setMap(null);
+
+    }
+    function showEartquakes() {
+            setMapOnAll(map);
+            userCoordinate.setMap(map);
+          }

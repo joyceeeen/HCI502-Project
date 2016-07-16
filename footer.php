@@ -6,6 +6,7 @@
    <script src="js/bootstrap.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAolqrs1RmBOGIJIu4rIe4SJFA6CB1lI58&callback=initMap"></script>
 <script src="js/maps.js" charset="utf-8"></script>
+<script src="js/bootstrap-select.min.js" charset="utf-8"></script>
 
 <script type="text/javascript">
  var width = +document.getElementById("sukat").value;
@@ -17,8 +18,20 @@ document.getElementById("tamangoras"+i).innerHTML = d;
 
 }
 </script>
+<script src="js/filter.js" charset="utf-8"></script>
 <script>
 	function changeMap(){
-		 window.location.search += '&param='+document.getElementById("quake").value;	
+		 window.location.search += '&param='+document.getElementById("quake").value;
 	}
+</script>
+<script type="text/javascript">
+function earthquake(){
+  $('html,body').animate({
+        scrollTop: $(".sub-header").offset().top},
+        'slow');
+      }
+function backtotop() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+
+}
 </script>

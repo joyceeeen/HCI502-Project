@@ -1,15 +1,24 @@
 <?php
 	include 'header.php';
 	?>
-	   <div class="dropdown">
-    <select onchange="changeMap()" id="quake">
-      <option value="hour">Past Hour</a></option>
-      <option value="day">Past Day</option>
-      <option value="seven">Past Seven Days</option>
-	  <option value="month">Past Thirty Days</option>
-    </select>
-  </div>
-	
+
+					<div class="panel panel-primary filterable" style="margin-bottom:50px;">
+							<div class="panel-heading">
+
+									<div class="dropdown">
+								 <select onchange="changeMap()" id="quake" class="selectpicker">
+
+							<option value="hour" >Past Hour</option>
+									 <option value="day">Past Day</option>
+									 <option value="seven">Past Week</option>
+								 <option value="month">Past Month</option>
+								 </select>
+							 </div>
+
+									<div class="pull-right" style="margin-top:-32px;">
+											<button class="btn btn-default btn-sm btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+									</div>
+							</div>
   <?php
 	$url = $_SERVER['REQUEST_URI'];
 	if(strpos($url, '?') === false){
@@ -31,7 +40,6 @@
 			include 'month_earthquakes.php';
 		}
 	}
-	
+
 	include 'footer.php';
 ?>
-
