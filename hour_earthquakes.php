@@ -14,7 +14,12 @@
 
                   <?php
   					$jsondata =file_get_contents("http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson");
-  					$json = json_decode($jsondata,true); ?>
+  					$json = json_decode($jsondata,true);
+
+					if(count($json)>0){
+
+					?>
+
 
   		<?php
   					$output ="<tr>";
@@ -30,7 +35,7 @@
   					$output .= "<td>" .$features['properties']['mag']. "</td>";
   					$output .= "<td>" .$features['properties']['place']. "</td>";
   					$output .= "<td>" .$features['properties']['tsunami']. "</td>";
-  					$output .= "<td>" .$features['geometry']['coordinates'][0]. "<br>".$features['geometry']['coordinates'][1].  "<br>".$features['geometry']['coordinates'][2]."</td>";
+  					$output .= "<td> <a href='javascript:map.panTo(new google.maps.LatLng(".$features['geometry']['coordinates'][1].",".$features['geometry']['coordinates'][0]."));map.setZoom(9);' onclick='backtotop();coordinates(".$features['geometry']['coordinates'][1].",".$features['geometry']['coordinates'][0].",".$features['properties']['tsunami'].",".$features['properties']['mag'].");'>" .$features['geometry']['coordinates'][0]. "<br>".$features['geometry']['coordinates'][1].  "<br>".$features['geometry']['coordinates'][2]."</a></td>";
   					$output .= "</tr>";
   						$idsaoras = 'oras'.$i;
   						?>
@@ -46,7 +51,19 @@
 
   					<?php
   				echo $output;
-  				?>
+  				}
+				else{
+					?>
+					<tr>
+					<td></td>
+					<td></td>
+					<td>No Current Earthquake</td>
+					</tr>
+					<?php
+
+				}
+
+				?>
 
                 </tbody>
             </table>

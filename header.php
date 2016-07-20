@@ -24,9 +24,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="javascript:map.panTo(new google.maps.LatLng(14.8302664,121.1126421));map.setZoom(9);" onclick="showEartquakes();backtotop();">Valley Fault System</a></li>
-            <li><a href="javascript:map.panTo(new google.maps.LatLng(14.8302664,121.1126421));map.setZoom(9);"  onclick="showEvacuation();backtotop();">Evacuation Areas</a></li>
-            <li><a href="#" onclick="earthquake();">Earthquakes</a></li>
+            <li><a href="javascript:map.panTo(new google.maps.LatLng(14.8302664,121.1126421));map.setZoom(9);" onclick="showEarthquakes();backtotop();">Valley Fault System</a></li>
+            <li><a href="javascript:map.panTo(new google.maps.LatLng(14.6193909,121.1100414));map.setZoom(11);"  onclick="showEvacuation();backtotop();">Evacuation Areas</a></li>
+            <li><a onclick="earthquake();" style="cursor: pointer;">Earthquakes</a></li>
             <li><a href="#">Help</a></li>
           </ul>
         </div>

@@ -24,7 +24,17 @@
     ['<b>Biñan City, Laguna <br> Population: 333,028</b>', 14.3034756,121.0759443],
     ['<b>Santa Rosa City, Laguna <br> Population: 353,767</b>', 14.283444,121.084726],
     ['<b>Cabuyao City, Laguna <br> Population: 308,745</b>', 14.2471016,121.1360729],
-    ['<b>Calamba City, Laguna <br> Population: 454,486</b>', 14.1870326,121.1235034]
+    ['<b>Calamba City, Laguna <br> Population: 454,486</b>', 14.1870326,121.1235034],
+    ['<b>University of the Philippines - Diliman North Side </b>', 14.618873, 121.073970], //coordinates of evauation area
+    ['<b>Marikina Boys Town East Side </b>', 14.666823, 121.118052],
+    ['<b>LRT 2 - Santolan Depot</b>', 14.622044, 121.086042],
+    ['<b>Intramuros Golf Course </b>', 14.593188, 120.996594],
+    ['<b>Ultra - Pasig</b>', 14.577634, 121.066295],
+    ['<b> Villamor Air Base Golf Club</b>', 14.519300, 121.025447],
+    ['<b>Bonifacio Global City</b>', 14.540867, 121.050318],
+    ['<b>Chateau Open Area</b>', 14.536991, 121.044095],
+    ['<b>Kagitingan Executive Golf Course</b>', 14.529825, 121.055017],
+    ['<b>El Salvador Open Area</b>', 14.488050, 121.016328]
 
   ];
   var userCoorPath = [new google.maps.LatLng(15.0929081,121.0613609),
@@ -60,7 +70,7 @@ var population = [22663,111348,574089,369222,252527,2936116,450741,755300,582602
   var marker, i,earthquake;
 
 
-  for (i = 0; i < locations.length; i++) {
+  for (i = 0; i < locations.length-10; i++) {
     var circle = new google.maps.Circle({
 map: map,
 radius: Math.sqrt(population[i])*2,
@@ -84,6 +94,20 @@ circle.bindTo('map', marker);
     })(marker, i));
       markers.push(marker);
   }
+  for (i = 19; i < locations.length; i++) {
+    marker = new google.maps.Marker({
+        icon: 'images/house.png',
+      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+      map: map
+    });
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+      return function() {
+        infowindow.setContent(locations[i][0]);
+        infowindow.open(map, marker);
+      }
+    })(marker, i));
+      markers.push(marker);
+  }
 //opening sidebar by markers
 function myClick(id){
     google.maps.event.trigger(markers[id], 'click');
@@ -91,6 +115,7 @@ function myClick(id){
     userCoordinate.setMap(map);
 
 }
+
 //valley fault system
     var infoWindows = [];
     infoWindows.push(infowindow);
@@ -108,16 +133,35 @@ google.maps.event.addListener(map, "click", function(event) {
 });
 //set earthquakes minus the evacuation
 function setMapOnAll(map) {
-       for (var i = 0; i < markers.length-5; i++) {
+       for (var i = 0; i < markers.length-10; i++) {
          markers[i].setMap(map);
        }
      }
+     function setNoEvacuation(map) {
+            for (var i = 19; i < markers.length; i++) {
+              markers[i].setMap(map);
+            }
+          }
+
 function showEvacuation() {
       setMapOnAll(null);
+      setNoEvacuation(map);
       userCoordinate.setMap(null);
 
     }
-    function showEartquakes() {
+    function showEarthquakes() {
             setMapOnAll(map);
+            setNoEvacuation(null);
             userCoordinate.setMap(map);
+
+          }
+          function coordinates(lat,lng,Tsunami,mag,time){
+            marker = new google.maps.Marker({
+              position: new google.maps.LatLng(lat,lng),
+              map: map
+            });
+            var d= new Date(time);
+            var j = new Date(Date.parse(d)).toUTCString();
+            infowindow.setContent("<b>Magnitude: "+mag+'<br>Tsunami: ' + Tsunami+'<br> Time and Date: '+j+'</b>');
+            infowindow.open(map, marker);
           }

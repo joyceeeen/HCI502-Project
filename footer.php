@@ -21,8 +21,21 @@ document.getElementById("tamangoras"+i).innerHTML = d;
 <script src="js/filter.js" charset="utf-8"></script>
 <script>
 	function changeMap(){
-		 window.location.search += '&param='+document.getElementById("quake").value;
+		var sourceURL = window.location.href.split("?")[0];
+		sourceURL +='?&param='+document.getElementById("quake").value;
+		 window.location.href= sourceURL;
+
 	}
+	$( document ).ready(function() {
+	var sourceURL = window.location.href.split("?")[1];
+	var  type= sourceURL.split("=")[1];
+	if(sourceURL == 'undefined'){
+	$('#quake option[value=hour]').attr('selected','selected');
+	}
+	else{
+   $('#quake option[value='+type+']').attr('selected','selected');
+   }
+});
 </script>
 <script type="text/javascript">
 function earthquake(){

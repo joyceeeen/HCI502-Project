@@ -6,12 +6,12 @@
 							<div class="panel-heading">
 
 									<div class="dropdown">
-								 <select onchange="changeMap()" id="quake" class="selectpicker">
+								 <select onchange="changeMap()" id="quake" class="selectpicker" name="quake">
 
-							<option value="hour" >Past Hour</option>
-									 <option value="day">Past Day</option>
-									 <option value="seven">Past Week</option>
-								 <option value="month">Past Month</option>
+									 <option value="hour" id="hour">Past Hour</option>
+									 <option value="day" id="day">Past Day</option>
+									 <option value="seven" id="seven">Past Week</option>
+								     <option value="month" id="month">Past Month</option>
 								 </select>
 							 </div>
 
@@ -21,17 +21,20 @@
 							</div>
   <?php
 	$url = $_SERVER['REQUEST_URI'];
-	if(strpos($url, '?') === false){
+	
+	if(strpos($url, '?') == false){
 		include 'hour_earthquakes.php';
 	}
 	else{
+
 		$arr1 = explode('?',$url);
 		$arr2 = explode('=',$arr1[1]);
-		if($arr2[1] == 'hour'){
-			include 'hour_earthquakes.php';
-		}
-		else if($arr2[1] == 'day'){
+		
+		if($arr2[1] == 'day'){
 			include 'day_earthquakes.php';
+		}
+		else if($arr2[1] == 'hour'){
+			include 'hour_earthquakes.php';
 		}
 		else if($arr2[1] == 'seven'){
 			include 'week_earthquakes.php';
